@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PersonagemData" load_steps=6 format=3 uid="uid://cfdy3pr0xuith"]
+
+[ext_resource type="Script" path="res://Resources/PersonagemData.gd" id="1_awwhf"]
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_lq4bk"]
+[ext_resource type="Resource" uid="uid://bxto77d1i6pf4" path="res://Abilities/Ted/CorteRapido.tres" id="2_ed2gl"]
+[ext_resource type="Resource" uid="uid://dup8l387bx3kf" path="res://Abilities/Ted/Atirar.tres" id="3_smiux"]
+[ext_resource type="Resource" uid="uid://b5q4of2lflf7h" path="res://Abilities/Ted/TiroDePrecisao.tres" id="4_10ddf"]
+
+[resource]
+script = ExtResource("1_awwhf")
+nome = "Ted"
+hp_max = 80
+defesa = 6
+massa = ""
+classe = ""
+habilidades = Array[ExtResource("1_lq4bk")]([ExtResource("2_ed2gl"), ExtResource("3_smiux"), ExtResource("4_10ddf")])
+effects = {}

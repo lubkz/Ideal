@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PersonagemData" load_steps=6 format=3 uid="uid://b7yj2spnynpkc"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_fdbly"]
+[ext_resource type="Script" path="res://Resources/PersonagemData.gd" id="1_uflm4"]
+[ext_resource type="Resource" uid="uid://dm1csssw4mnkp" path="res://Abilities/Vera/AtaqueReprimido.tres" id="2_eqqbj"]
+[ext_resource type="Resource" uid="uid://1am56f4ycyh0" path="res://Abilities/Vera/CorteProfano.tres" id="3_jjhv4"]
+[ext_resource type="Resource" uid="uid://d3at5kpx64txn" path="res://Abilities/Vera/OverrideDeFuria.tres" id="3_uix3k"]
+
+[resource]
+script = ExtResource("1_uflm4")
+nome = "Vera"
+hp_max = 65
+defesa = 3
+massa = ""
+classe = ""
+habilidades = Array[ExtResource("1_fdbly")]([ExtResource("2_eqqbj"), ExtResource("3_jjhv4"), ExtResource("3_uix3k")])
+effects = {}

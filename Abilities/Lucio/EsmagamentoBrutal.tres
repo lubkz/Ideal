@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://dh6ownowq4ytv"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_wknrj"]
+
+[resource]
+script = ExtResource("1_wknrj")
+nome = "Esmagamento Brutal"
+dano_base = 37
+custo_recarca = 0
+efeito_status = ""
+tipo = "Físico"
+descricao = "\"Bruto e eficiente\" - Ataque com seu machado."

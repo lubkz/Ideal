@@ -1,0 +1,590 @@
+[gd_scene load_steps=33 format=3 uid="uid://6uruv0opdymv"]
+
+[ext_resource type="Script" path="res://Scripts/BattleManager.gd" id="1_uhfuy"]
+[ext_resource type="Script" path="res://Characters/Characters_Scripts/ema.gd" id="3_wmhv2"]
+[ext_resource type="Resource" uid="uid://ccynufrx1a3rf" path="res://Characters/Characters_Resources/EmaData.tres" id="4_cn1e2"]
+[ext_resource type="FontFile" uid="uid://f5gy3dghybn0" path="res://Fonts/toxigenesis bd.otf" id="6_1n8wy"]
+[ext_resource type="Script" path="res://Characters/Characters_Scripts/lucio.gd" id="7_edkfn"]
+[ext_resource type="Texture2D" uid="uid://b6hof487ka6jm" path="res://Characters/Characters_Sprites/BgPortrait.png" id="7_kjs2w"]
+[ext_resource type="Texture2D" uid="uid://cduqbkt0bm8wx" path="res://Characters/Characters_Sprites/Normal1.png" id="8_3xe4o"]
+[ext_resource type="Resource" uid="uid://d28b255yondkl" path="res://Characters/Characters_Resources/LucioData.tres" id="8_36muj"]
+[ext_resource type="Script" path="res://Characters/Characters_Scripts/vera.gd" id="9_5xoex"]
+[ext_resource type="Texture2D" uid="uid://dtp1eyj0i4myb" path="res://Characters/Characters_Sprites/Normal2.png" id="9_tyh5i"]
+[ext_resource type="Resource" uid="uid://b7yj2spnynpkc" path="res://Characters/Characters_Resources/VeraData.tres" id="10_7dx4t"]
+[ext_resource type="Texture2D" uid="uid://c4k6xauslgjaa" path="res://Characters/Characters_Sprites/Normal3.png" id="10_dipp0"]
+[ext_resource type="Texture2D" uid="uid://bpe37rf342f7" path="res://Characters/Characters_Sprites/Normal4.png" id="11_ixiaa"]
+[ext_resource type="Texture2D" uid="uid://b33q8l3sxfkjk" path="res://Characters/Characters_Sprites/Ted1.png" id="12_tjeyv"]
+[ext_resource type="Texture2D" uid="uid://ctnu2ol6j1bgs" path="res://Characters/Characters_Sprites/Ted2.png" id="13_agugg"]
+[ext_resource type="Texture2D" uid="uid://dghiqrpf6w0on" path="res://Characters/Characters_Sprites/Ted3.png" id="14_rn7uw"]
+[ext_resource type="Texture2D" uid="uid://bcgca7x5g085t" path="res://Characters/Characters_Sprites/Ted4.png" id="15_ogevl"]
+[ext_resource type="Texture2D" uid="uid://1dshrm8540kn" path="res://Characters/Characters_Sprites/Tensao1.png" id="16_5jef0"]
+[ext_resource type="Texture2D" uid="uid://dixjejnlkxof" path="res://Characters/Characters_Sprites/Tensão2.png" id="17_h5d5j"]
+[ext_resource type="Texture2D" uid="uid://bahjkl08v2nqb" path="res://Characters/Characters_Sprites/Tensão3.png" id="18_kblfi"]
+[ext_resource type="Texture2D" uid="uid://dr7r2qhrbim3d" path="res://Characters/Characters_Sprites/Tensão4.png" id="19_0xgoc"]
+[ext_resource type="AudioStream" uid="uid://dsfm4k6ipjwb1" path="res://Audio/Layer1.wav" id="21_aj1cl"]
+[ext_resource type="AudioStream" uid="uid://cgrsv0hobrdcf" path="res://Audio/Layer2.wav" id="22_7a62t"]
+[ext_resource type="AudioStream" uid="uid://8el1pvrpeh7h" path="res://Audio/Layer3.wav" id="23_n3ihd"]
+[ext_resource type="PackedScene" uid="uid://bhkduw6nh3k6r" path="res://Characters/Instance_Characters/combatent.tscn" id="24_n1qwe"]
+[ext_resource type="Script" path="res://Characters/Characters_Scripts/ted.gd" id="25_1uf2l"]
+[ext_resource type="Resource" uid="uid://cfdy3pr0xuith" path="res://Characters/Characters_Resources/TedData.tres" id="26_bunkw"]
+[ext_resource type="Script" path="res://Characters/Characters_Scripts/inimigo.gd" id="28_qkjbn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_00rfm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ry7mv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c72rj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nl8uv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3xe4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tyh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dipp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ixiaa")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_tjeyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_agugg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rn7uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ogevl")
+}],
+"loop": true,
+"name": &"ted",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_5jef0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_h5d5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kblfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0xgoc")
+}],
+"loop": true,
+"name": &"tensao",
+"speed": 3.0
+}]
+
+[node name="BatleRoot" type="Node2D"]
+script = ExtResource("1_uhfuy")
+
+[node name="Ema" parent="." instance=ExtResource("24_n1qwe")]
+position = Vector2(228, 442)
+script = ExtResource("3_wmhv2")
+data = ExtResource("4_cn1e2")
+
+[node name="Marker2D" type="Marker2D" parent="Ema"]
+position = Vector2(0, -100)
+
+[node name="Ted" parent="." instance=ExtResource("24_n1qwe")]
+position = Vector2(115, 393)
+script = ExtResource("25_1uf2l")
+data = ExtResource("26_bunkw")
+
+[node name="Marker2D" type="Marker2D" parent="Ted"]
+position = Vector2(0, -100)
+
+[node name="Lucio" parent="." instance=ExtResource("24_n1qwe")]
+position = Vector2(346, 485)
+script = ExtResource("7_edkfn")
+data = ExtResource("8_36muj")
+
+[node name="Marker2D" type="Marker2D" parent="Lucio"]
+position = Vector2(0, -100)
+
+[node name="Vera" parent="." instance=ExtResource("24_n1qwe")]
+position = Vector2(462, 532)
+script = ExtResource("9_5xoex")
+data = ExtResource("10_7dx4t")
+
+[node name="Marker2D" type="Marker2D" parent="Vera"]
+position = Vector2(0, -100)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ActionPanel" type="MarginContainer" parent="HUD"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -297.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 175
+
+[node name="ExtPanel" type="TextureRect" parent="HUD/ActionPanel"]
+modulate = Color(1, 1, 1, 0.701961)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_00rfm")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/ActionPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="IntPanel" type="TextureRect" parent="HUD/ActionPanel/MarginContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Botoes" type="VBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -68.0
+offset_right = 69.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="Button" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer"]
+layout_mode = 2
+text = "Ataque"
+
+[node name="Button2" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer"]
+layout_mode = 2
+text = "Especial"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+
+[node name="Button3" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer2"]
+layout_mode = 2
+text = "item"
+
+[node name="Button4" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer2"]
+layout_mode = 2
+text = "Diálogo"
+
+[node name="AttackPanel" type="MarginContainer" parent="HUD"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = -301.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 175
+
+[node name="ExtPanel" type="TextureRect" parent="HUD/AttackPanel"]
+modulate = Color(1, 1, 1, 0.701961)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_00rfm")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/AttackPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="IntPanel" type="TextureRect" parent="HUD/AttackPanel/MarginContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Botoes" type="VBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -68.0
+offset_right = 69.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="Button" type="Button" parent="HUD/AttackPanel/MarginContainer/IntPanel/Botoes/HBoxContainer"]
+layout_mode = 2
+text = "Ataque"
+
+[node name="Button2" type="Button" parent="HUD/AttackPanel/MarginContainer/IntPanel/Botoes/HBoxContainer"]
+layout_mode = 2
+text = "Ataque2"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+
+[node name="Button3" type="Button" parent="HUD/AttackPanel/MarginContainer/IntPanel/Botoes/HBoxContainer2"]
+layout_mode = 2
+text = "Ataque3"
+
+[node name="Button4" type="Button" parent="HUD/AttackPanel/MarginContainer/IntPanel/Botoes/HBoxContainer2"]
+visible = false
+layout_mode = 2
+text = "Ataque4"
+
+[node name="PartyHPbars" type="VBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 49.0
+offset_bottom = 60.0
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Ted" type="HBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Ted"]
+layout_mode = 2
+text = "Ted"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Ted"]
+layout_mode = 2
+
+[node name="Ema" type="HBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Ema"]
+layout_mode = 2
+text = "Ema"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Ema"]
+layout_mode = 2
+
+[node name="Vera" type="HBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Vera"]
+layout_mode = 2
+text = "Vera"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Vera"]
+layout_mode = 2
+
+[node name="Lúcio" type="HBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Lúcio"]
+layout_mode = 2
+text = "Lúcio"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/AttackPanel/MarginContainer/IntPanel/PartyHPbars/Lúcio"]
+layout_mode = 2
+
+[node name="TensionPartyBar" type="HBoxContainer" parent="HUD/AttackPanel/MarginContainer/IntPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_right = 68.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 17
+
+[node name="Label" type="Label" parent="HUD/AttackPanel/MarginContainer/IntPanel/TensionPartyBar"]
+layout_mode = 2
+text = "Tensão da equipe"
+
+[node name="PartyTensionBar" type="ProgressBar" parent="HUD/AttackPanel/MarginContainer/IntPanel/TensionPartyBar"]
+layout_mode = 2
+
+[node name="EnemyPainel" type="MarginContainer" parent="HUD"]
+offset_right = 472.0
+offset_bottom = 85.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 0
+
+[node name="ExtPanel" type="TextureRect" parent="HUD/EnemyPainel"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_ry7mv")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/EnemyPainel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="Inimigos" type="VBoxContainer" parent="HUD/EnemyPainel/MarginContainer"]
+layout_mode = 2
+
+[node name="Enemy" type="VBoxContainer" parent="HUD/EnemyPainel/MarginContainer/Inimigos"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/EnemyPainel/MarginContainer/Inimigos/Enemy"]
+layout_mode = 2
+text = "Enemy"
+
+[node name="EnemyHP" type="ProgressBar" parent="HUD/EnemyPainel/MarginContainer/Inimigos/Enemy"]
+layout_mode = 2
+show_percentage = false
+
+[node name="EnemyCorruptionBar" type="ProgressBar" parent="HUD/EnemyPainel/MarginContainer/Inimigos/Enemy"]
+layout_mode = 2
+show_percentage = false
+
+[node name="Enemy2" type="VBoxContainer" parent="HUD/EnemyPainel/MarginContainer/Inimigos"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/EnemyPainel/MarginContainer/Inimigos/Enemy2"]
+layout_mode = 2
+text = "Enemy2"
+
+[node name="EnemyHP" type="ProgressBar" parent="HUD/EnemyPainel/MarginContainer/Inimigos/Enemy2"]
+layout_mode = 2
+show_percentage = false
+
+[node name="EnemyCorruptionBar" type="ProgressBar" parent="HUD/EnemyPainel/MarginContainer/Inimigos/Enemy2"]
+layout_mode = 2
+show_percentage = false
+
+[node name="FocusPainel" type="MarginContainer" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -547.0
+offset_top = -169.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ExtPanel" type="TextureRect" parent="HUD/FocusPainel"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_c72rj")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/FocusPainel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HboxContainer" type="HBoxContainer" parent="HUD/FocusPainel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer_Data" type="VBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PartyHPbars" type="VBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Ted" type="VBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Ted"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 15
+text = "Ted"
+
+[node name="TedHp" type="ProgressBar" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Ted"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 10
+fill_mode = 1
+show_percentage = false
+
+[node name="Global_data" type="MarginContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data"]
+layout_mode = 2
+
+[node name="Ema" type="HBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="EmaHp" type="ProgressBar" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer/Ema"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 8
+fill_mode = 1
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer/Ema"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 8
+text = "Ema"
+
+[node name="Vera" type="HBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="VeraHp" type="ProgressBar" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer/Vera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 8
+fill_mode = 1
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer/Vera"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 8
+text = "Vera"
+
+[node name="Lucio" type="HBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="LucioHp" type="ProgressBar" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer/Lucio"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 8
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/PartyHPbars/Global_data/VBoxContainer/Lucio"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 8
+text = "Lúcio"
+
+[node name="TensionPartyBar" type="VBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/TensionPartyBar"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 10
+text = "Tensão da equipe"
+horizontal_alignment = 1
+
+[node name="PartyTensionBar" type="ProgressBar" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_Data/TensionPartyBar"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_1n8wy")
+theme_override_font_sizes/font_size = 10
+show_percentage = false
+
+[node name="VBoxContainer_portrait2" type="VBoxContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_portrait2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="Portrait" type="NinePatchRect" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_portrait2/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("7_kjs2w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUD/FocusPainel/MarginContainer/HboxContainer/VBoxContainer_portrait2/MarginContainer"]
+sprite_frames = SubResource("SpriteFrames_nl8uv")
+animation = &"normal"
+centered = false
+offset = Vector2(-16, -45)
+
+[node name="Sfx_player" type="AudioStreamPlayer" parent="."]
+
+[node name="Layer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_aj1cl")
+bus = &"Music"
+
+[node name="Layer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_7a62t")
+volume_db = -80.0
+bus = &"Music"
+
+[node name="Layer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_n3ihd")
+volume_db = -80.0
+bus = &"CRISIS"
+
+[node name="Inimigo" parent="." instance=ExtResource("24_n1qwe")]
+position = Vector2(909, 138)
+scale = Vector2(1, 0.4)
+script = ExtResource("28_qkjbn")
+
+[node name="Marker2D" type="Marker2D" parent="Inimigo"]
+position = Vector2(0, -100)
+
+[node name="Inimigo2" parent="." instance=ExtResource("24_n1qwe")]
+position = Vector2(1022, 195)
+scale = Vector2(1, 0.4)
+script = ExtResource("28_qkjbn")
+
+[node name="Marker2D" type="Marker2D" parent="Inimigo2"]
+position = Vector2(0, -100)
+
+[connection signal="pressed" from="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer/Button" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="HUD/AttackPanel/MarginContainer/IntPanel/Botoes/HBoxContainer/Button" to="." method="_on_Attack_button_pressed"]
+[connection signal="pressed" from="HUD/AttackPanel/MarginContainer/IntPanel/Botoes/HBoxContainer/Button2" to="." method="_on_Attack2_button_pressed"]
+[connection signal="pressed" from="HUD/AttackPanel/MarginContainer/IntPanel/Botoes/HBoxContainer2/Button3" to="." method="_on_Attack3_button_pressed"]

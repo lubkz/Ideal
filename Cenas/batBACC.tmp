@@ -1,0 +1,235 @@
+[gd_scene load_steps=13 format=3 uid="uid://6uruv0opdymv"]
+
+[ext_resource type="Script" path="res://Characters/ted.gd" id="1_ac044"]
+[ext_resource type="Script" path="res://Scripts/BattleManager.gd" id="1_uhfuy"]
+[ext_resource type="Resource" uid="uid://ccynufrx1a3rf" path="res://Characters/EmaData.tres" id="2_kyu4x"]
+[ext_resource type="Script" path="res://Characters/ema.gd" id="2_qx5uw"]
+[ext_resource type="Resource" uid="uid://cfdy3pr0xuith" path="res://Characters/TedData.tres" id="2_vt1wc"]
+[ext_resource type="Script" path="res://Characters/vera.gd" id="5_1vlp2"]
+[ext_resource type="Resource" uid="uid://b7yj2spnynpkc" path="res://Characters/VeraData.tres" id="6_y68l6"]
+[ext_resource type="Script" path="res://Characters/lucio.gd" id="7_fqcnv"]
+[ext_resource type="Script" path="res://Characters/PersonagemBase.gd" id="9_wpprx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ivi4s"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_00rfm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ry7mv"]
+
+[node name="BatleRoot" type="Node2D"]
+script = ExtResource("1_uhfuy")
+
+[node name="Ted" type="CharacterBody2D" parent="."]
+position = Vector2(126.188, 465.625)
+scale = Vector2(37.625, 129.25)
+script = ExtResource("1_ac044")
+data = ExtResource("2_vt1wc")
+
+[node name="TalkPosition" type="Marker2D" parent="Ted"]
+
+[node name="Ema" type="CharacterBody2D" parent="."]
+position = Vector2(212, 483)
+scale = Vector2(37.625, 129.25)
+script = ExtResource("2_qx5uw")
+data = ExtResource("2_kyu4x")
+
+[node name="TalkPosition" type="Marker2D" parent="Ema"]
+
+[node name="Vera" type="CharacterBody2D" parent="."]
+position = Vector2(305, 508)
+scale = Vector2(37.625, 129.25)
+script = ExtResource("5_1vlp2")
+data = ExtResource("6_y68l6")
+
+[node name="TalkPosition" type="Marker2D" parent="Vera"]
+
+[node name="Lúcio" type="CharacterBody2D" parent="."]
+position = Vector2(405, 533)
+scale = Vector2(37.625, 129.25)
+script = ExtResource("7_fqcnv")
+
+[node name="TalkPosition" type="Marker2D" parent="Lúcio"]
+
+[node name="Inimigo" type="Sprite2D" parent="."]
+position = Vector2(932, 98)
+scale = Vector2(37.625, 129.25)
+texture = SubResource("CanvasTexture_ivi4s")
+script = ExtResource("9_wpprx")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ActionPanel" type="MarginContainer" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -547.0
+offset_top = -188.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ExtPanel" type="TextureRect" parent="HUD/ActionPanel"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_00rfm")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/ActionPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="IntPanel" type="TextureRect" parent="HUD/ActionPanel/MarginContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Botoes" type="VBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -68.0
+offset_right = 69.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="Button" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer"]
+layout_mode = 2
+text = "Ataque"
+
+[node name="Button2" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer"]
+layout_mode = 2
+text = "Especial"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+
+[node name="Button3" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer2"]
+layout_mode = 2
+text = "item"
+
+[node name="Button4" type="Button" parent="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer2"]
+layout_mode = 2
+text = "Diálogo"
+
+[node name="PartyHPbars" type="VBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 49.0
+offset_bottom = 60.0
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Ted" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Ted"]
+layout_mode = 2
+text = "Ted"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Ted"]
+layout_mode = 2
+
+[node name="Ema" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Ema"]
+layout_mode = 2
+text = "Ema"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Ema"]
+layout_mode = 2
+
+[node name="Vera" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Vera"]
+layout_mode = 2
+text = "Vera"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Vera"]
+layout_mode = 2
+
+[node name="Lúcio" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Lúcio"]
+layout_mode = 2
+text = "Lúcio"
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/ActionPanel/MarginContainer/IntPanel/PartyHPbars/Lúcio"]
+layout_mode = 2
+
+[node name="TensionPartyBar" type="HBoxContainer" parent="HUD/ActionPanel/MarginContainer/IntPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_right = 68.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 17
+
+[node name="Label" type="Label" parent="HUD/ActionPanel/MarginContainer/IntPanel/TensionPartyBar"]
+layout_mode = 2
+text = "Tensão da equipe"
+
+[node name="PartyTensionBar" type="ProgressBar" parent="HUD/ActionPanel/MarginContainer/IntPanel/TensionPartyBar"]
+layout_mode = 2
+
+[node name="EnemyPainel" type="MarginContainer" parent="HUD"]
+offset_right = 472.0
+offset_bottom = 85.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 0
+
+[node name="ExtPanel" type="TextureRect" parent="HUD/EnemyPainel"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_ry7mv")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/EnemyPainel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/EnemyPainel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/EnemyPainel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Enemy"
+
+[node name="EnemyHP" type="ProgressBar" parent="HUD/EnemyPainel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+show_percentage = false
+
+[node name="EnemyCorruptionBar" type="ProgressBar" parent="HUD/EnemyPainel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+show_percentage = false
+
+[connection signal="pressed" from="HUD/ActionPanel/MarginContainer/IntPanel/Botoes/HBoxContainer/Button" to="." method="_on_attack_button_pressed"]

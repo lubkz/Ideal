@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://c81jy6n6v4xeg"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_6w5ni"]
+
+[resource]
+script = ExtResource("1_6w5ni")
+nome = "Arranhar"
+dano_base = 34
+custo_recarca = 0
+efeito_status = ""
+tipo = "Físico"
+descricao = "\"Ghhar\""

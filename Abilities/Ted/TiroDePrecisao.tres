@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://b5q4of2lflf7h"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_e7b1j"]
+
+[resource]
+script = ExtResource("1_e7b1j")
+nome = "Tiro De Precisão"
+dano_base = 75
+custo_recarca = 3
+efeito_status = "Cegueira"
+tipo = "Sádico"
+descricao = "\"Mais um crânio pra coleção\" - Mire na cabeça de seu inimigo. Sem mais piedade!"

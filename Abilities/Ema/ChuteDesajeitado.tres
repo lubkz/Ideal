@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://cppey4n6dnuef"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_sy06a"]
+
+[resource]
+script = ExtResource("1_sy06a")
+nome = "Chute Desajeitado"
+dano_base = 13
+custo_recarca = 0
+efeito_status = "Confusão"
+tipo = "Físico"
+descricao = "\"Ahh!\" - Afaste teus inimigos e se proteja."

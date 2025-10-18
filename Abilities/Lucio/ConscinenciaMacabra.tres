@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://djhhpdmfbig3p"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_olmom"]
+
+[resource]
+script = ExtResource("1_olmom")
+nome = "Consciencia Macabra"
+dano_base = 134
+custo_recarca = 2
+efeito_status = ""
+tipo = "Físico"
+descricao = "\"...\" -  Oh, criança indigna. Eliminate a teus inimigos."

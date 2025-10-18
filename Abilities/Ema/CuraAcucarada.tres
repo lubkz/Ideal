@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://beb02sylx32da"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_4kldd"]
+
+[resource]
+script = ExtResource("1_4kldd")
+nome = "Cura Açucarada"
+dano_base = 0
+custo_recarca = 2
+efeito_status = ""
+tipo = ""
+descricao = "\"Chocolate!\" - Ofereça chocolate a seus aliados machucados. Deve ajudar!?"

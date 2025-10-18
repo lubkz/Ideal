@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PersonagemData" load_steps=6 format=3 uid="uid://ccynufrx1a3rf"]
+
+[ext_resource type="Script" path="res://Resources/PersonagemData.gd" id="1_3ode3"]
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_25u2t"]
+[ext_resource type="Resource" uid="uid://beb02sylx32da" path="res://Abilities/Ema/CuraAcucarada.tres" id="2_hmi8x"]
+[ext_resource type="Resource" uid="uid://cppey4n6dnuef" path="res://Abilities/Ema/ChuteDesajeitado.tres" id="3_m3tqq"]
+[ext_resource type="Resource" uid="uid://cet7kvuls6c00" path="res://Abilities/Ema/Dialogo.tres" id="4_4jsrg"]
+
+[resource]
+script = ExtResource("1_3ode3")
+nome = "Ema"
+hp_max = 100
+defesa = 4
+massa = ""
+classe = ""
+habilidades = Array[ExtResource("1_25u2t")]([ExtResource("3_m3tqq"), ExtResource("4_4jsrg"), ExtResource("2_hmi8x")])
+effects = {}

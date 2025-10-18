@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://1am56f4ycyh0"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_yk4t1"]
+
+[resource]
+script = ExtResource("1_yk4t1")
+nome = "Corte Profano"
+dano_base = 31
+custo_recarca = 2
+efeito_status = "Sangramento Profundo"
+tipo = "Físico"
+descricao = "\"Acho que... não tenho escolha.\" - Enfim, ganhe coragem e use sua grande lâmina corretamente!"

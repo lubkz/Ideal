@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HabilidadeData" load_steps=2 format=3 uid="uid://cn48qvh1pxssn"]
+
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_srykl"]
+
+[resource]
+script = ExtResource("1_srykl")
+nome = "Contra-Ataque"
+dano_base = 54
+custo_recarca = 0
+efeito_status = "Nenhum"
+tipo = "Físico"
+descricao = "\"Prepare-se para o pior\" -  Recebe o próximo ataque e devolve em uma tacada potencialmente brutal."

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PersonagemData" load_steps=7 format=3 uid="uid://d28b255yondkl"]
+
+[ext_resource type="Script" path="res://Resources/PersonagemData.gd" id="1_7vvom"]
+[ext_resource type="Script" path="res://Resources/HabilidadeData.gd" id="1_v4p47"]
+[ext_resource type="Resource" uid="uid://dh6ownowq4ytv" path="res://Abilities/Lucio/EsmagamentoBrutal.tres" id="2_s8wnx"]
+[ext_resource type="Resource" uid="uid://diow12djfhfrn" path="res://Abilities/Lucio/ContraAtaqueBrutal.tres" id="3_ikg3i"]
+[ext_resource type="Resource" uid="uid://djhhpdmfbig3p" path="res://Abilities/Lucio/ConscinenciaMacabra.tres" id="4_4rsed"]
+[ext_resource type="Resource" uid="uid://cn48qvh1pxssn" path="res://Abilities/Lucio/ContraAtaque.tres" id="5_44wl5"]
+
+[resource]
+script = ExtResource("1_7vvom")
+nome = "Lcio"
+hp_max = 125
+defesa = 9
+massa = ""
+classe = ""
+habilidades = Array[ExtResource("1_v4p47")]([ExtResource("2_s8wnx"), ExtResource("3_ikg3i"), ExtResource("4_4rsed"), ExtResource("5_44wl5")])
+effects = {}
